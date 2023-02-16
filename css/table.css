@@ -1,53 +1,51 @@
+
 body{
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #545454, #383838, #000000);
+	background-image: url('../picture/background2.jpg');
+	background-size:cover
+}
+.header{
+    font-size: 2.3em;
 }
 
 .container h1{
     color: #fff;
 }
 .accessUIDiv {
-    margin: 10px;
-    padding: 10px 10px;
     text-align: center;
     align-self: center;
-}
-
-.column{
-    display: inline-block;
-    vertical-align: middle;
-    padding: 10px 10px;
-    
-}
-
-.column button{
-    position: relative;
-    background: #ffffff;
-    border-radius: 50%;
-    padding: 10px;
-    margin: 10px;
-    width: 40px;
-    height: 40px;
-    font-size: 10px;
     display: flex;
-    border: none;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-align: center;
 }
+.addUserClick{
+    color:#fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    float: right;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    background-color: rgb(97, 97, 97);
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
 /* search bar formatting */
 .search-container{
     background-color: #fff;
     height: 30px;
     width: 400px;
     border-radius: 30px;
-    padding: 10px 20px;
+    padding: 10px 10px;
+    margin: auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,22 +74,29 @@ body{
 }
 
 #addMe{
+    margin-top:30px;
     display: none;
 }
 .addContacts{
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.4px);
+  -webkit-backdrop-filter: blur(9.4px);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+  width: 80%;    
+  padding:10px;   
+  /*imported*/
+  margin-top: 10px;
 	width: 350px;
-	height: 500px;
-	background: rgb(65, 65, 65) ;
-	overflow: hidden;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
+	height: 550px;
 }
 .addContacts label{
 	color: #fff;
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
-	margin: 30px;
+	margin: 20px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
@@ -136,26 +141,266 @@ body{
     display: flex;
     justify-content: center;
 }
-
-        
-        
+#td6{
+    width:10px
+}
 #tbl
-{
-    width: 80%;
-            
+{/* From https://css.glass */
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px);
+    width: 80%;    
+    padding:10px;       
 }
 
 .table{
     color:#fff;
-    background-color: #6d5c5c;
-
+    border:none;
     
 }
-.border_bottom {
-    border-collapse: 1px solid rgb(255, 255, 255);
+
+.table-row{
+border:none;
 }
-#tab {
-    text-align: center;
-    display: flex;
+.border_bottom{
+border:none;
+}
+
+.btn {
+    border: 2px solid black;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 24px;
+    font-size: 16px;
+    cursor: pointer;
     justify-content: center;
+    margin:5px;
+    line-height:0px;
+  }
+  .warning {
+    border-color: #0d0036;
+    color: #ffffff;
+    height: 25px;
+  }
+  
+  .warning:hover {
+    background: #ff9800;
+    color: white;
+  }
+  /* Red */
+.danger {
+    border-color: #f44336;
+    color: white;
+    height: 25px;
+  }
+  
+  .danger:hover {
+    background: #f44336;
+    color: white;
+  }
+  
+/* #delete_button{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color: black;
+
+    }
+    #delete_button:hover{
+    color:#ffffff;
+    background-color:#f80000;
+    }
+    @media all and (max-width:30em){
+    #delete_button{
+        display:block;
+        margin:0.4em auto;
+    }
+    } */
+/* input styling*/.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
 }
+
+.form__field {
+    text-align: center;
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+/* contact form validation*/
+#fNameMsg{
+  display: block;
+	justify-content: center;
+	color: red;
+  text-align:center;
+}
+#lNameMsg{
+  display: block;
+	justify-content: center;
+	color: red;
+  text-align:center;
+}
+#emailMsg{
+  display: block;
+	justify-content: center;
+	color: red;
+  text-align:center;
+}
+#addressMsg{
+  display: block;
+	justify-content: center;
+	color: red;
+  text-align:center;
+}
+#phoneMsg{
+  display: block;
+	justify-content: center;
+	color: red;
+  text-align:center;
+}
+.addUserClick {
+	padding: 20px 28px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 15px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+  }
+ 
+ .addUserClick:hover {
+	background-color: rgba(255,255,255,0.2);
+  }
+  .logOut {
+    display:flex;
+    margin: auto 20px;
+    padding: 20px 28px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    }
+   
+   .logOut:hover {
+    background-color: rgba(255,255,255,0.2);
+    }
+    /* .addContactButton {
+      padding: 24px 32px;
+      border: 0;
+      text-decoration: none;
+      border-radius: 15px;
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(30px);
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+   
+    .addContactButton:hover {
+      background-color: rgba(255,255,255,0.2);
+    } */
+
+/* test code*/
+      #tab {
+        align-items: flex-start;
+        height: 800px;/*es an initial height of 600px to the table */
+        overflow-y: auto; /* make the table scrollable if height is more than 600 px  */
+      }
+      #tab {
+        display:flex;
+        margin-top: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+
+      .border_bottom{
+        background: rgba(0, 0, 0, 0.47);
+        border-radius: 10px  10px 0px 0px ;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        width: 80%;    
+        padding:10px;
+        position: sticky;
+        top: 0px;
+      }
+      table {
+        border-collapse: collapse; /* make the table borders collapse to each other */
+        width: 100%;
+      }
+      .table-row {
+        border-radius: 10px  10px 0px 0px ;
+      }

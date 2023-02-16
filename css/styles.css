@@ -6,8 +6,13 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #545454, #383838, #000000);
+	/* background-color: linear-gradient(to bottom, #545454, #383838, #000000); */
+	background-image: url('../picture/background2.jpg');
+	background-size:cover
 }
+	/* background-image: url("https://images.unsplash.com/photo-1629194898512-b6b8697063ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1662&q=80");
+} */
+
 .main{
 	width: 350px;
 	height: 500px;
@@ -34,6 +39,7 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
+
 input{
 	width: 60%;
 	height: 20px;
@@ -54,7 +60,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #5a5a5a;
+	background: #0d0036;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -65,7 +71,7 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: #727272;
+	background: #d500f9;
 }
 .login{
 	height: 470px;
@@ -74,14 +80,22 @@ button:hover{
 	transform: translateY(-110px);
 	transition: .8s ease-in-out;
 }
-
+#wholeForm{
+	/* From https://css.glass */
+	background: rgba(255, 255, 255, 0.18);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(9.4px);
+	-webkit-backdrop-filter: blur(9.4px);
+	border: 1px solid rgba(255, 255, 255, 0.51);
+}
 
 .login label{
-	color: #757575;
+	color: #0d0036;
 	transform: scale(.6);
 }
-#explanation,
-#explanationUser {
+#checkPassword,
+#checkUser {
     display: none;
     color: #fff;
     position: relative;
@@ -89,10 +103,21 @@ button:hover{
     text-align: center;
 }
 
-#explanation>p {
+#checkPassword>p {
     position: relative;
 	line-height: 0;
 
+}
+#loginResult {
+	display: flex;
+	justify-content: center;
+	color: #ff0000;
+}
+
+#signupResult{
+	display: flex;
+	justify-content: center;
+	color: #ff0303;
 }
 
 .valid {
@@ -105,7 +130,6 @@ button:hover{
 
 }
 
-/* Add a red text color and a sad face when the requirements are wrong */
 .invalid {
     color: rgb(233, 106, 106);
 }
@@ -116,7 +140,6 @@ button:hover{
 
 }
 
-/* for the optional number, hyphen, and underscore in username signup field */
 .opt {
     color: rgb(250, 250, 121);
 }
@@ -136,4 +159,3 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
-

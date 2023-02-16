@@ -2,43 +2,100 @@
 <html>
   <head>
     <title>COP 4331 Project</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script type="text/javascript" src="js/code.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="main">
+    <div class="main" id="wholeForm">
       <input type="checkbox" id="chk" aria-hidden="true" />
 
       <div class="signup">
         <form>
-          <label for="chk" class = "signup-text" aria-hidden="true">Sign up</label>
-          <input type="text" name="txt" placeholder="First Name" required="" />
-          <input type="text" name="txt" placeholder="Last Name" required="" />
-          <input type="text" name="txt" placeholder="User name" required="" />
+          <label for="chk" class="signup-text" aria-hidden="true"  aria-required ="true"
+            >Sign up</label
+          >
           <input
+            id="firstName"
+            type="text"
+            name="txt"
+            placeholder="First Name"
+            required = "true"
+          />
+          <input
+            id="lastName"
+            type="text"
+            name="txt"
+            placeholder="Last Name"
+            required = "true"
+          />
+          <input
+            id="userName"
+            type="text"
+            name="txt"
+            placeholder="User name"
+            required = "true"
+            pattern="(?=.*[a-zA-Z])[a-zA-Z0-9-_]{3,18}"
+            title="Must be between 3-13 characters and must contain at least one letter"
+            onclick="checkUsername()"
+          />
+          <input
+            id="password"
             type="password"
             name="pswd"
             placeholder="Password"
-            required=""
+            required = "true"
+	    pattern="?=a+"
+            title="Must be between 8-32 characters and must contain at least one number and one special character"
+            onclick="checkPassword()"
           />
-          <button>Sign up</button>
+          <button type="button" onclick="doSignUp()">Sign up</button>
+          <span
+            class="text"
+            style="color: rgb(203, 55, 21)"
+            id="signupResult"
+          ></span>
+          <div id="checkPassword">
+            <h3>Password must contain the following:</h3>
+            <p id="passLen" class="invalid">8 to 32 characters</p>
+            <p id="passLett" class="invalid">At least one letter</p>
+            <p id="passNum" class="invalid">At least one number</p>
+            <p id="passSpec" class="invalid">At least one special character</p>
+          </div>
+          <div id="checkUser">
+            <h3>Username must contain the following:</h3>
+            <p id="userLett" class="invalid">At least one letter</p>
+            <p id="userLen" class="invalid">3 to 18 characters</p>
+            <h3>Username may contain the following:</h3>
+            <p id="userNum" class="opt">Numbers</p>
+            <p id="userUnd" class="opt">Underscores</p>
+            <p id="userHyp" class="opt">Hyphens</p>
+          </div>
         </form>
       </div>
 
       <div class="login">
         <form>
-          <label for="chk" aria-hidden="true">Login</label>
-          <input type="text" name="txt" placeholder="User name" required="" />
+          <label for="chk" aria-hidden="true">Login Now</label>
           <input
+            id="loginName"
+            type="text"
+            name="txt"
+            placeholder="User name"
+            required = "true"
+          />
+          <input
+            id="loginPassword"
             type="password"
             name="pswd"
             placeholder="Password"
-            required=""
+            required = "true"
           />
-          <button>Login</button>
+          <button type="button" onclick="doLogin()">Login</button>
+          <span class="text" id="loginResult"></span>
         </form>
       </div>
     </div>

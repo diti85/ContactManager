@@ -1,6 +1,8 @@
 <?php
 	$inData = getRequestInfo();
 
+	$firstname = $inData["firstname"];
+	$lastname = $inData["lastname"];
 	$id = $inData["id"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 	
@@ -10,20 +12,11 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("DELETE FROM Contacts WHERE ID=?");
-                $stmt->bind_param("i", $id);
+		$stmt = $conn->prepare("DELETE FROM Contacts WHERE FirstName=? AND LastName=? AND ID=?");
+                $stmt->bind_param("ssi", $firstname, $lastname, $id);
                 $stmt->execute();
-		$result = $stmt->get_result();
-
-		if($conn->affected_rows)
-		{
-			returnWithError("Successfully deleted Contact id={$id} from Contacts");
-                }
-                else
-                {
-                        returnWithError("No Records Found");
-                }
-
+                $result = $stmt->get_result();
+		returnWithError("Successfully deleted {$firstname} {$lastname} from Contacts");
 		$stmt->close();
 		$conn->close();
 	}
@@ -45,9 +38,9 @@
                 sendResultInfoAsJson( $retValue ); 
         } 
          
-        function returnWithInfo( $id ) 
+        function returnWithInfo( $firstName, $lastName, $id ) 
         { 
-                $retValue = '{"id":' . $id . '","error":""}'; 
+                $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}'; 
                 sendResultInfoAsJson( $retValue ); 
         }
 ?>
